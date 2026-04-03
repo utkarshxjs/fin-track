@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTrack</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>FinTrack</h1>
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard">
+      <div class="card">
+        <h3>Total Balance</h3>
+        <p id="balance">₹0</p>
+      </div>
+      <div class="card income">
+        <h3>Total Income</h3>
+        <p id="income">₹0</p>
+      </div>
+      <div class="card expense">
+        <h3>Total Expenses</h3>
+        <p id="expense">₹0</p>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      
+      <!-- Form -->
+      <div class="card">
+        <h3>Add Transaction</h3>
+        <form id="transactionForm">
+          <input type="text" id="text" placeholder="Description" required />
+          <input type="number" id="amount" placeholder="Amount (+ income, - expense)" required />
+          <input type="text" id="category" placeholder="Category" required />
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <!-- Transactions -->
+      <div class="card">
+        <h3>Transactions</h3>
+        <ul id="transactionList"></ul>
+      </div>
+
+      <!-- Chart -->
+      <div class="card chart-card">
+        <h3>Spending Overview</h3>
+        <canvas id="expenseChart"></canvas>
+      </div>
+
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
